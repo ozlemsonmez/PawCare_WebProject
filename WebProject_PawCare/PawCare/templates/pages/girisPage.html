@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pati Giriş Sayfası</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+  <style>
+    body {
+        background-image: url('https://img.freepik.com/free-vector/cute-playful-footprint-pattern-background-fauna-fun_1017-44713.jpg?t=st=1715077899~exp=1715078499~hmac=1ffa418720343349e6f01c21c58b685a5904c86a447684d33edbe4483844bd95');
+        background-repeat: repeat; /* Arka plan resmini yatay ve dikey yönde çoğalt */
+      }
+
+    .signup-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 400px;
+      margin: 0 auto; /* Ortala */
+      margin-top: 50px; /* Boşluk bırak */
+    }
+
+    .signup-container h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .input-group input {
+      width: 98%;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #db7093;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #B8486B;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: mistyrose !important;">
+        <a class="navbar-brand" href="{% url 'home' %}" style="font-family: cursive; font-weight: bold; font-size: 25px; color: #B8486B;">PawCare</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'home' %}">Anasayfa <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'vetPage' %}">Veterinerler</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Hakkımızda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'iletisimPage' %}">İletişim</a>
+              </li>
+            </ul>
+            <span class="navbar-text" style="font-family: cursive; color: #B8486B;">MİNİK PATİLER, BÜYÜK SEVGİ!</span>
+          </div>
+    </nav>
+  <div class="signup-container" style="font-family: cursive;">
+    <h2 style="color: #B8486B;">PATİ GİRİŞİ</h2>
+    <form action="{% url 'girisPage' %}" method="post">
+      {% csrf_token %}
+      <div class="input-group">
+        <label for="email">Pati Pasaport Numarası:</label>
+        <input type="text" id="no" name="no" required />
+      </div>
+      <div class="input-group">
+        <label for="password">Şifre: </label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <button type="submit">Giriş Yap</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+</body>
+</html>
